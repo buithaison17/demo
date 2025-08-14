@@ -45,7 +45,8 @@ class ElectronicsProduct extends Product {
         this.warrantyPeriod = warrantyPeriod
     }
     getProductInfo(): string {
-        return `ID: ${this.id}
+        return `
+                ID: ${this.id}
                 Tên sản phẩm: ${this.name}
                 Giá: ${this.price}
                 Hàng tồn kho: ${this.stock}
@@ -69,7 +70,8 @@ class ClothingProduct extends Product {
         this.color = color;
     }
     getProductInfo(): string {
-        return `ID: ${this.id}
+        return `
+                ID: ${this.id}
                 Tên sản phẩm: ${this.name}
                 Giá: ${this.price}
                 Hàng tồn kho: ${this.stock}
@@ -103,7 +105,8 @@ class Order {
                     ` - ${item.product.name} x${item.quantity} = ${item.product.price * item.quantity}`
             )
             .join('\n');
-        return `ID: ${this.orderId}
+        return `
+                ID: ${this.orderId}
                 Khách hàng: ${this.customer.name}
                 Sản phẩm: ${productList}
                 Tổng giá trị: ${this.totalAmount}
