@@ -170,11 +170,11 @@ class Store {
     }
     listAvailableProducts(): void {
         const avavailable = this.products.filter(product => product.stock > 0);
-        avavailable.forEach(item => item.getProductInfo());
+        avavailable.forEach(item => console.log(item.getProductInfo()));
     }
     listCustomerOrders(customerId: number): void {
         const customerOrders = this.orders.filter(order => order.customer.id === customerId);
-        customerOrders.forEach(o => o.getDetails());
+        customerOrders.forEach(o => console.log(o.getDetails()));
     }
     calculateTotalRevenue(): number{
         return this.orders.reduce((total, order) => total+ order.totalAmount, 0);
@@ -201,3 +201,5 @@ myStore.addProduct(new ElectronicsProduct("Laptop Dell", 20000000, 10, 24));
 myStore.addProduct(new ElectronicsProduct("Điện thoại Samsung", 15000000, 5, 12));
 myStore.addProduct(new ClothingProduct("Áo thun nam", 200000, 20, "L", "Xanh"));
 myStore.addProduct(new ClothingProduct("Quần jean nữ", 400000, 15, "M", "Đen"));
+
+myStore.listAvailableProducts();
